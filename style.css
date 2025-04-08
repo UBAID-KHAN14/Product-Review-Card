@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ========================================
+   Root Variables
+======================================== */
+:root {
+  --font-family: "Roboto", sans-serif;
+
+  --color-background: #f3efe3;
+  --color-white: #ffffff;
+
+  --color-text-primary: #868686;
+  --color-price: #3c8369;
+  --color-price-hover: #174534;
+
+  --color-button-text: #ffffff;
+}
+
+/* ========================================
+   Global Styles & Reset
+======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+/* ========================================
+   Body Layout & Centering
+======================================== */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+/* ========================================
+   Main Container Wrapper
+======================================== */
+.main {
+  padding: 20px;
+}
+
+/* ========================================
+   Product Card Container
+======================================== */
+.product-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  height: 380px;
+}
+
+/* ========================================
+   Left Side - Product Image
+======================================== */
+.product-container .left-container {
+  display: flex;
+  flex: 60%;
+}
+
+.product-container .left-container img {
+  width: 100%;
+  max-width: 300px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* ========================================
+   Right Side - Product Details
+======================================== */
+.product-container .right-container {
+  display: flex;
+  flex-direction: column;
+  flex: 50%;
+  gap: 10px;
+  padding: 30px 10px;
+}
+
+.right-container h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin: 5px 0;
+  width: 80%;
+}
+
+.right-container p:nth-of-type(1) {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: var(--color-text-primary);
+  letter-spacing: 2px;
+}
+
+.right-container p:nth-of-type(2) {
+  color: var(--color-text-primary);
+  letter-spacing: 0.6px;
+  font-size: 14px;
+}
+
+.right-container p span {
+  text-transform: capitalize;
+}
+
+.right-container .price {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.right-container .price h2 {
+  color: var(--color-price);
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+.right-container .price p {
+  font-size: .8rem;
+  text-decoration: line-through;
+}
+
+.right-container .cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-price);
+  padding: 10px;
+  gap: 10px;
+  color: var(--color-button-text);
+  border-radius: 7px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.right-container .cart p {
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--color-button-text);
+}
+
+.right-container .cart:hover {
+  background-color: var(--color-price-hover);
+}
+
+/* ========================================
+   Responsive Design - Mobile View
+======================================== */
+@media screen and (max-width: 622px) {
+  .product-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    height: 500px;
+    max-width: 300px;
+  }
+
+  .left-container {
+    display: flex;
+    background: url('images/image-product-mobile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .left-container img {
+    display: none;
+  }
+
+  .right-container {
+    display: flex;
+    padding: 10px;
+  }
+
+  .right-container .cart {
+    width: 100%;
+  }
+
+  .right-container h1 {
+    width: 100%;
+  }
+}
